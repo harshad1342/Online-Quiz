@@ -3,19 +3,19 @@ Online Quiz using Tkinter
 
 
 Code:
-# ===================some imports==============
+ ===================some imports==============
 import random, sys
 from tkinter import *
 from tkinter.ttk import Separator
 from tkinter.messagebox import showinfo
 from time import time, strftime
 
-# =========start making window==============
+ =========start making window==============
 root = Tk()
 root.geometry('700x500')
 root.resizable(0, 0)
 root.title('Quiz App Designed by: ')
-# ==================set an image as icon of app
+ ==================set an image as icon of app
 img = ('wm', 'iconphoto', root._w, PhotoImage(file='game.png'))
 root.tk.call(img)  # add image as icon of game
 root.config(bg='black')
@@ -57,7 +57,7 @@ def timeShow():
     showtime.after(1000, timeShow)
 
 
-# ====================make student's Attendance===================
+ ====================make student's Attendance===================
 def getDetails():
     global name, roll, mainWindow, Name, Roll
     Name = name.get()
@@ -93,16 +93,16 @@ def attendance():
     mainWindow.mainloop()
 
 
-# ==============================================toplevel finished=================================================
+ ==============================================toplevel finished=================================================
 
-# ====================================quit game===================
+ ====================================quit game===================
 def quit_function():
     answer = showinfo(title="Good luck", message="Good Luck For Your Future..\n We'll contact you soon.")
     if answer == 'ok':
         sys.exit(root.destroy())
 
 
-# ================================= desable all buttons============
+ ================================= desable all buttons============
 def desableAllButton():
     option1.config(state=DISABLED)
     option2.config(state=DISABLED)
@@ -110,7 +110,7 @@ def desableAllButton():
     option4.config(state=DISABLED)
 
 
-# ================================== enable All buttons============
+ ================================== enable All buttons============
 def enableAllButton():
     option1.config(state=NORMAL)
     option2.config(state=NORMAL)
@@ -118,7 +118,7 @@ def enableAllButton():
     option4.config(state=NORMAL)
 
 
-# ================================== Show final Result=============
+ ================================== Show final Result=============
 def result():
     global score, Name, Roll
     root.withdraw()
@@ -140,7 +140,7 @@ def result():
     top.mainloop()
 
 
-# ===================== questions and corresponding answers
+ ===================== questions and corresponding answers
 
 questions = {'Who is the founder of Python?': 'Guido van Rossum ',
              'What is the Output of 13//3   ?': '4.0',
@@ -153,13 +153,13 @@ questions = {'Who is the founder of Python?': 'Guido van Rossum ',
 print("Welcome to exam ")[::-1]''': 'maxe ot emocleW',
              'What is the Output of 0.1+0.2==0.3 ?': 'False'}
 
-# ==================== separate questions and answers from questions variable
+ ==================== separate questions and answers from questions variable
 que = []
 ans = []
 for key, value in questions.items():
     que.append(key)
     ans.append(value)
-# ==================== corresponding answers with answers including at random
+ ==================== corresponding answers with answers including at random
 options = [
     ['van neuman', ans[0], 'James Gosling', 'Gudo van Rosom'],
     [ans[1], '4', '4.5', 'Error'],
@@ -167,7 +167,7 @@ options = [
     [' to Welcome ', 'Welcome to ', ans[3], 'Error'],
     ['True', '0.6', 'SyntaxError', ans[4]]
 ]
-# =============================================================================
+ =============================================================================
 currentQ = ''
 queNo = None
 currentA = ''
